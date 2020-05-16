@@ -4,11 +4,11 @@
 ## to
 ## https://hub.docker.com/repository/docker/shiringlander/docker-rstudio
 
-FROM rocker/rstudio:latest
-
-run apt-get update && \
-  apt-get install -y libcurl4-openssl-dev libssl-dev libssh2-1-dev libxml2-dev && \
-  R -e "install.packages(c('tidyverse', 'devtools', 'testthat', 'roxygen2'))"
+FROM rocker/tidyverse:latest
+  
+# Install R packages
+#RUN install2.r --error \
+#    package
 
 EXPOSE 8787
 
